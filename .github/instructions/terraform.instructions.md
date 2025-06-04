@@ -11,23 +11,27 @@ Composable Terraform best practices following [Google Cloud Terraform guidelines
 This instruction set is composed of focused, reusable guidelines. Each covers a specific aspect of Terraform development:
 
 ### 📁 [File Structure & Organization](./terraform-structure.instructions.md)
+
 - Standard module structure and directory layout
 - Logical resource groupings by function
 - Multi-environment organization patterns
 - Documentation and examples structure
 
 ### 🏷️ [Naming Conventions](./terraform-naming.instructions.md)
+
 - Resource and variable naming standards
 - Consistent naming patterns across environments
 - Tag naming and organization
 
 ### 🔧 [Variable Best Practices](./terraform-variables.instructions.md)
+
 - Variable declaration standards
 - Type definitions and validation
 - Default value strategies
 - Sensitive variable handling
 
 ### 🔒 [Security Best Practices](./terraform-security.instructions.md)
+
 - Sensitive data handling and secret management
 - Resource security configuration (encryption, IAM)
 - Network security (security groups, NACLs)
@@ -36,6 +40,7 @@ This instruction set is composed of focused, reusable guidelines. Each covers a 
 ## Quick Reference
 
 ### Essential Standards
+
 - Use **underscores** for resource names, **hyphens** for actual resource naming
 - Always provide variable descriptions and types
 - Group resources by function, not by type
@@ -43,9 +48,10 @@ This instruction set is composed of focused, reusable guidelines. Each covers a 
 - Never hardcode secrets in Terraform files
 
 ### File Organization
+
 ```
 module/
-├── main.tf              # Primary resources  
+├── main.tf              # Primary resources
 ├── variables.tf         # All variables
 ├── outputs.tf          # All outputs
 ├── versions.tf         # Provider constraints
@@ -55,6 +61,7 @@ module/
 ```
 
 ### Code Quality
+
 - Use `terraform fmt` for consistent formatting
 - Implement input validation with `validation` blocks
 - Use meaningful comments for complex logic
@@ -68,4 +75,4 @@ module/
 
 ---
 
-*This modular approach allows you to focus on specific aspects while maintaining consistency across all Terraform projects.*
+_This modular approach allows you to focus on specific aspects while maintaining consistency across all Terraform projects._

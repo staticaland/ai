@@ -9,6 +9,7 @@ Focused guidelines for declaring and using variables effectively in Terraform.
 ## Variable Declaration Standards
 
 ### Complete Variable Definition
+
 ```hcl
 variable "instance_count" {
   description = "Number of instances to create"
@@ -35,17 +36,20 @@ variable "environment" {
 ## Variable Guidelines
 
 ### Required Elements
+
 - **Always** provide descriptions for variables
 - **Always** specify types explicitly
 - Use `validation` blocks for input validation where appropriate
 
 ### Default Value Strategy
+
 - Provide default values for environment-independent values
 - **Don't** provide defaults for environment-specific values (`project_id`, `region`)
 - Use empty defaults only when leaving empty is valid
 - Only parameterize values that must vary between instances/environments
 
 ### Complex Variable Types
+
 ```hcl
 variable "server_configs" {
   description = "Map of server configurations"
@@ -74,12 +78,14 @@ variable "allowed_cidr_blocks" {
 ## Variable Organization
 
 ### File Structure
+
 - Keep all variable declarations in `variables.tf`
 - Group related variables together
 - Order variables logically (required first, then optional)
 - Use comments to separate logical groups
 
 ### Variable Grouping Example
+
 ```hcl
 # Infrastructure Configuration
 variable "project_name" {
@@ -115,6 +121,7 @@ variable "instance_type" {
 ## Sensitive Variables
 
 ### Handling Sensitive Data
+
 ```hcl
 variable "database_password" {
   description = "Database password"
@@ -131,7 +138,8 @@ variable "api_keys" {
 ```
 
 ### Best Practices for Secrets
+
 - Mark sensitive variables with `sensitive = true`
 - Never provide default values for secrets
 - Use external secret management systems when possible
-- Reference secrets through data sources rather than variables when feasible 
+- Reference secrets through data sources rather than variables when feasible

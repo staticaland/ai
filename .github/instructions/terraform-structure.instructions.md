@@ -9,6 +9,7 @@ Focused guidelines for organizing Terraform files and modules effectively.
 ## Standard Module Structure
 
 ### Core Files
+
 - Start every module with a `main.tf` file where resources are located by default
 - Create logical groupings of resources with descriptive filenames:
   - `variables.tf` - All variable declarations
@@ -17,7 +18,9 @@ Focused guidelines for organizing Terraform files and modules effectively.
   - `data.tf` - Data sources (if numerous)
 
 ### Logical Resource Groupings
+
 Group related resources by function, not by resource type:
+
 - `network.tf` - VPC, subnets, routing, NAT gateways
 - `compute.tf` - EC2 instances, auto-scaling groups, launch templates
 - `security.tf` - Security groups, IAM roles, policies
@@ -25,11 +28,13 @@ Group related resources by function, not by resource type:
 - `monitoring.tf` - CloudWatch, alarms, dashboards
 
 ### Avoid Over-Segmentation
+
 - **Don't** give every resource its own file
 - **Don't** separate by resource type (all `aws_instance` in one file)
 - **Do** group by shared purpose and logical relationships
 
 ### Directory Structure
+
 ```
 module/
 ├── main.tf              # Primary resources
@@ -55,24 +60,25 @@ module/
 ## File Organization Best Practices
 
 ### Resource Grouping Strategy
+
 ```hcl
 # network.tf - All networking resources together
 resource "aws_vpc" "main" {
   cidr_block           = var.vpc_cidr
   enable_dns_hostnames = true
   enable_dns_support   = true
-  
+
   tags = local.common_tags
 }
 
 resource "aws_subnet" "public" {
   count = length(var.public_subnet_cidrs)
-  
+
   vpc_id                  = aws_vpc.main.id
   cidr_block              = var.public_subnet_cidrs[count.index]
   availability_zone       = var.availability_zones[count.index]
   map_public_ip_on_launch = true
-  
+
   tags = merge(local.common_tags, {
     Name = "${var.project_name}-public-${count.index + 1}"
     Type = "public"
@@ -81,7 +87,7 @@ resource "aws_subnet" "public" {
 
 resource "aws_internet_gateway" "main" {
   vpc_id = aws_vpc.main.id
-  
+
   tags = merge(local.common_tags, {
     Name = "${var.project_name}-igw"
   })
@@ -89,12 +95,13 @@ resource "aws_internet_gateway" "main" {
 ```
 
 ### File Header Comments
+
 ```hcl
 # network.tf
-# 
+#
 # This file contains all networking resources including:
 # - VPC and subnets
-# - Internet and NAT gateways  
+# - Internet and NAT gateways
 # - Route tables and associations
 # - Network ACLs
 ```
@@ -102,7 +109,8 @@ resource "aws_internet_gateway" "main" {
 ## Module Documentation
 
 ### README.md Structure
-```markdown
+
+````markdown
 # Module Name
 
 Brief description of what this module creates.
@@ -111,34 +119,35 @@ Brief description of what this module creates.
 
 \```hcl
 module "example" {
-  source = "./modules/example"
-  
-  project_name = "my-project"
-  environment  = "prod"
+source = "./modules/example"
+
+project_name = "my-project"
+environment = "prod"
 }
 \```
 
 ## Requirements
 
-| Name | Version |
-|------|---------|
-| terraform | >= 1.0 |
-| aws | ~> 5.0 |
+| Name      | Version |
+| --------- | ------- |
+| terraform | >= 1.0  |
+| aws       | ~> 5.0  |
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| project_name | Name of the project | `string` | n/a | yes |
+| Name         | Description         | Type     | Default | Required |
+| ------------ | ------------------- | -------- | ------- | :------: |
+| project_name | Name of the project | `string` | n/a     |   yes    |
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
+| Name   | Description   |
+| ------ | ------------- |
 | vpc_id | ID of the VPC |
-```
+````
 
 ### Examples Directory
+
 - Create `examples/` folder with working examples
 - Each example should be a complete, runnable configuration
 - Include different use cases: `basic/`, `advanced/`, `multi-region/`
@@ -146,9 +155,10 @@ module "example" {
 ## Local Values Organization
 
 ### locals.tf (when needed)
+
 ```hcl
 # locals.tf
-# 
+#
 # Complex local values and calculations
 
 locals {
@@ -159,16 +169,16 @@ locals {
     ManagedBy   = "terraform"
     CreatedAt   = timestamp()
   }
-  
+
   # Derived values
   instance_name = "${var.project_name}-${var.environment}-web"
-  
+
   # Conditional logic
   security_group_rules = var.environment == "prod" ? var.prod_sg_rules : var.dev_sg_rules
-  
+
   # Complex transformations
   subnet_map = {
-    for idx, cidr in var.subnet_cidrs : 
+    for idx, cidr in var.subnet_cidrs :
     "subnet-${idx}" => {
       cidr = cidr
       az   = var.availability_zones[idx]
@@ -180,6 +190,7 @@ locals {
 ## Multi-Environment Organization
 
 ### Workspace-based Structure
+
 ```
 environments/
 ├── dev/
@@ -197,11 +208,12 @@ environments/
 ```
 
 ### Module Reference Pattern
+
 ```hcl
 # environments/prod/main.tf
 module "vpc" {
   source = "../../modules/vpc"
-  
+
   project_name = var.project_name
   environment  = "prod"
   vpc_cidr     = "10.0.0.0/16"
@@ -209,9 +221,9 @@ module "vpc" {
 
 module "compute" {
   source = "../../modules/compute"
-  
+
   vpc_id      = module.vpc.vpc_id
   subnet_ids  = module.vpc.private_subnet_ids
   environment = "prod"
 }
-``` 
+```

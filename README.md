@@ -30,8 +30,9 @@ The instruction files contain guidelines that are automatically included in Copi
 - **`.github/instructions/terraform.instructions.md`** - Terraform-specific best practices (applies only to `*.tf`, `*.tfvars` files)
 
 These instructions help maintain consistency across:
+
 - Code generation
-- Test creation  
+- Test creation
 - Code reviews
 - Documentation
 - Infrastructure as Code

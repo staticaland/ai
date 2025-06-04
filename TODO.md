@@ -5,6 +5,7 @@
 Apply Cursor's documentation principles to VSCode instructions:
 
 ### Key Guidelines
+
 - **Keep rules concise** - Under 500 lines is a good target
 - **Split large concepts** into multiple, composable rules
 - **Provide concrete examples** or referenced files when helpful
@@ -12,9 +13,10 @@ Apply Cursor's documentation principles to VSCode instructions:
 - **Reuse rules** when repeating prompts in chat
 
 ### Action Items
+
 - [x] **COMPLETED**: Break down Terraform instructions (365 lines → 4 focused files)
   - Created `terraform-naming.instructions.md` - naming conventions
-  - Created `terraform-variables.instructions.md` - variable best practices  
+  - Created `terraform-variables.instructions.md` - variable best practices
   - Created `terraform-structure.instructions.md` - file organization
   - Created `terraform-security.instructions.md` - security practices
   - Updated main file to be lightweight orchestrator (85 lines)
@@ -28,6 +30,7 @@ Apply Cursor's documentation principles to VSCode instructions:
 ---
 
 ## Other Tasks
-- [ ] 
-- [ ] 
-- [ ] 
+
+- [ ]
+- [ ]
+- [ ]

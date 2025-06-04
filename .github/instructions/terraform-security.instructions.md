@@ -9,6 +9,7 @@ Focused guidelines for implementing security best practices in Terraform configu
 ## Sensitive Data Handling
 
 ### Never Hardcode Secrets
+
 ```hcl
 # ✗ NEVER do this
 resource "aws_db_instance" "bad_example" {
@@ -22,6 +23,7 @@ resource "aws_db_instance" "good_example" {
 ```
 
 ### Sensitive Variable Declaration
+
 ```hcl
 variable "database_password" {
   description = "Database password"
@@ -39,6 +41,7 @@ variable "api_keys" {
 ```
 
 ### External Secret Management
+
 ```hcl
 # Retrieve secrets from AWS Secrets Manager
 data "aws_secretsmanager_secret" "db_password" {
@@ -57,6 +60,7 @@ resource "aws_db_instance" "main" {
 ## Resource Security Configuration
 
 ### Encryption at Rest
+
 ```hcl
 # S3 Bucket with encryption
 resource "aws_s3_bucket" "secure" {
@@ -93,6 +97,7 @@ resource "aws_db_instance" "secure" {
 ```
 
 ### Encryption in Transit
+
 ```hcl
 # Application Load Balancer with SSL
 resource "aws_lb_listener" "https" {
@@ -119,6 +124,7 @@ resource "aws_elasticache_replication_group" "secure" {
 ## IAM Security Best Practices
 
 ### Least Privilege Principle
+
 ```hcl
 # Specific policy with minimal permissions
 resource "aws_iam_policy" "s3_read_only" {
@@ -150,6 +156,7 @@ resource "aws_iam_instance_profile" "app" {
 ```
 
 ### Secure Service Roles
+
 ```hcl
 resource "aws_iam_role" "app" {
   name = "${var.project_name}-app-role"
@@ -179,6 +186,7 @@ resource "aws_iam_role" "app" {
 ## Network Security
 
 ### Security Groups
+
 ```hcl
 resource "aws_security_group" "web" {
   name_prefix = "${var.project_name}-web-"
@@ -221,6 +229,7 @@ resource "aws_security_group" "web" {
 ```
 
 ### Network ACLs
+
 ```hcl
 resource "aws_network_acl" "private" {
   vpc_id     = var.vpc_id
@@ -253,6 +262,7 @@ resource "aws_network_acl" "private" {
 ## Resource Protection
 
 ### Deletion Protection
+
 ```hcl
 resource "aws_db_instance" "production" {
   deletion_protection = true
@@ -272,12 +282,13 @@ resource "aws_s3_bucket" "critical_data" {
 ```
 
 ### Backup and Recovery
+
 ```hcl
 resource "aws_db_instance" "main" {
   backup_retention_period = 30
   backup_window          = "03:00-04:00"
   maintenance_window     = "sun:04:00-sun:05:00"
-  
+
   final_snapshot_identifier = "${var.project_name}-final-snapshot-${formatdate("YYYY-MM-DD-hhmm", timestamp())}"
   skip_final_snapshot       = false
 }
@@ -286,6 +297,7 @@ resource "aws_db_instance" "main" {
 ## Monitoring and Logging
 
 ### Enable CloudTrail
+
 ```hcl
 resource "aws_cloudtrail" "security_audit" {
   name                          = "${var.project_name}-security-trail"
@@ -308,6 +320,7 @@ resource "aws_cloudtrail" "security_audit" {
 ```
 
 ### VPC Flow Logs
+
 ```hcl
 resource "aws_flow_log" "vpc" {
   iam_role_arn    = aws_iam_role.flow_log.arn
@@ -320,6 +333,7 @@ resource "aws_flow_log" "vpc" {
 ## Security Validation
 
 ### Pre-deployment Checks
+
 ```hcl
 # Validate security group rules
 variable "allowed_cidr_blocks" {
@@ -328,10 +342,10 @@ variable "allowed_cidr_blocks" {
 
   validation {
     condition = alltrue([
-      for cidr in var.allowed_cidr_blocks : 
+      for cidr in var.allowed_cidr_blocks :
       cidr != "0.0.0.0/0" || contains(["dev", "sandbox"], var.environment)
     ])
     error_message = "Production environments cannot allow access from 0.0.0.0/0."
   }
 }
-``` 
+```
