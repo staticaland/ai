@@ -1,0 +1,35 @@
+{
+  // Enable experimental prompt and instruction files
+  "chat.promptFiles": true,
+  
+  // Configure locations for instruction files
+  "chat.instructionsFilesLocations": [
+    ".github"
+  ],
+  
+  // Configure locations for prompt files
+  "chat.promptFilesLocations": [
+    ".github/prompts"
+  ],
+  
+  // Enable instruction files for code generation
+  "github.copilot.chat.codeGeneration.useInstructionFiles": true,
+  
+  // Configure specific instructions for different request types
+  "github.copilot.chat.codeGeneration.instructions": "Follow the guidelines in .github/copilot-instructions.md for code generation.",
+  "github.copilot.chat.testGeneration.instructions": "Generate comprehensive tests following the testing guidelines in .github/copilot-instructions.md.",
+  "github.copilot.chat.reviewSelection.instructions": "Review code according to the best practices outlined in .github/copilot-instructions.md.",
+  "github.copilot.chat.commitMessageGeneration.instructions": "Generate clear, descriptive commit messages following conventional commit format.",
+  "github.copilot.chat.pullRequestDescriptionGeneration.instructions": "Create detailed PR descriptions with context, changes, and testing information.",
+  
+  // Additional helpful settings
+  "files.associations": {
+    "*.prompt.md": "markdown"
+  },
+  
+  // Enable Copilot suggestions in markdown files
+  "github.copilot.enable": {
+    "*": true,
+    "markdown": true
+  }
+} 
