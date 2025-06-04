@@ -1,0 +1,48 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# AI Scaffolding Workflow
+
+This rule helps automate common tasks for managing the AI project scaffolding.
+
+## When Adding New Technology Support
+
+1. Create a new instruction file in `.github/instructions/{technology}.instructions.md`
+2. Add technology-specific prompts in `.github/prompts/`
+3. Update the main README.md with new capabilities
+4. Test the new instructions with actual AI interactions
+5. Update VS Code settings if needed for new file associations
+
+## When Creating New Prompt Templates
+
+1. Follow the naming convention: `{action}-{target}.prompt.md`
+2. Use the standard prompt structure with context, instructions, parameters, and examples
+3. Test the prompt with different scenarios
+4. Document the prompt in the main README.md
+5. Consider creating related instruction files if needed
+
+## Quality Assurance
+
+- Ensure all prompt files follow the established structure
+- Verify instruction files are specific and actionable
+- Test AI interactions with new content
+- Maintain consistency across all scaffolding files
+- Update documentation to reflect new capabilities
+
+## Maintenance Tasks
+
+- Regularly review and update existing prompts based on usage
+- Keep instruction files aligned with current best practices
+- Update VS Code settings for new features or file types
+- Ensure all templates work with current AI model capabilities
+- Gather feedback and iterate on prompt effectiveness
+
+## File Organization
+
+- Keep related prompts grouped logically
+- Use clear, descriptive file names
+- Maintain consistent formatting across all files
+- Reference related files using @filename syntax in rules
+- Keep the directory structure clean and intuitive

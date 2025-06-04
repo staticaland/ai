@@ -1,0 +1,52 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Instruction File Guidelines
+
+When creating or modifying instruction files in `.github/` or `.github/instructions/`:
+
+## Purpose
+
+Instruction files provide persistent context and guidelines to AI assistants:
+- General guidelines in `copilot-instructions.md`
+- Technology-specific guidance in `instructions/*.instructions.md`
+- Domain-specific best practices and patterns
+
+## Structure
+
+- Start with a clear title and purpose
+- Organize content into logical sections
+- Use hierarchical headings (##, ###)
+- Include specific, actionable guidelines
+- Provide concrete examples where helpful
+- Keep instructions focused and concise
+
+## Content Guidelines
+
+- Be specific rather than vague
+- Include technology-specific best practices
+- Reference project patterns and conventions
+- Specify coding standards and formatting rules
+- Include error handling and testing guidance
+- Document architectural decisions and patterns
+
+## Technology-Specific Instructions
+
+For specialized instruction files:
+- Name files as `{technology}.instructions.md`
+- Focus on technology-specific best practices
+- Include common patterns and anti-patterns
+- Reference official documentation and standards
+- Provide examples of proper usage
+
+## Maintenance
+
+- Keep instructions up to date with project evolution
+- Review and update based on team feedback
+- Ensure consistency across different instruction files
+- Test instructions with actual AI interactions
+
+@.github/copilot-instructions.md
+@.github/instructions/terraform.instructions.md

@@ -1,0 +1,43 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# AI Development Standards
+
+This project focuses on AI-assisted development workflows. Follow these standards:
+
+## General Principles
+
+- Write clean, maintainable, and well-documented code
+- Use TypeScript for type safety in JavaScript/Node.js projects
+- Follow modern ES6+ syntax and features
+- Implement proper error handling with try-catch blocks
+- Add JSDoc comments for functions and classes
+- Follow existing project structure and patterns
+- Use environment variables for configuration values
+
+## AI-Assisted Development
+
+- Leverage GitHub Copilot and Cursor AI effectively
+- Create reusable prompt templates for common tasks
+- Maintain instruction files for consistent AI guidance
+- Use descriptive naming that helps AI understand context
+- Structure code in a way that provides clear context to AI tools
+
+## Testing Standards
+
+- Use descriptive test names that explain what is being tested
+- Follow the AAA pattern (Arrange, Act, Assert)
+- Mock external dependencies appropriately
+- Test both happy path and edge cases
+- Aim for good test coverage without over-testing
+
+## Documentation
+
+- Use clear, concise language
+- Include code examples where appropriate
+- Keep README files up to date with project changes
+- Document API endpoints with parameters and response formats
+
+@.github/copilot-instructions.md

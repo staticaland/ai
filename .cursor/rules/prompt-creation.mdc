@@ -1,0 +1,60 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Prompt File Creation Guidelines
+
+When creating or modifying prompt files in `.github/prompts/`:
+
+## Structure
+
+- Start with a clear, descriptive title
+- Include a brief description of the prompt's purpose
+- Provide context about when to use this prompt
+- Include specific instructions and parameters
+- Add examples of expected inputs and outputs
+- End with usage instructions
+
+## Naming Convention
+
+- Use kebab-case for file names
+- Include `.prompt.md` extension
+- Use descriptive names that indicate the prompt's purpose
+- Examples: `create-component.prompt.md`, `debug-issue.prompt.md`
+
+## Content Guidelines
+
+- Be specific and actionable in instructions
+- Include placeholder variables using `{variable_name}` syntax
+- Provide concrete examples rather than abstract descriptions
+- Include error handling considerations
+- Specify expected file types, frameworks, or technologies
+- Add validation steps or criteria for success
+
+## Template Structure
+
+```markdown
+# Prompt Title
+
+Brief description of what this prompt does.
+
+## Context
+When to use this prompt...
+
+## Instructions
+Step-by-step instructions...
+
+## Parameters
+- {parameter1}: Description
+- {parameter2}: Description
+
+## Example
+Input: ...
+Expected Output: ...
+
+## Usage
+In VS Code: `@workspace /prompt-name`
+```
+
+@.github/prompts/create-component.prompt.md

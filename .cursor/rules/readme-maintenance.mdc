@@ -1,0 +1,55 @@
+---
+description: 
+globs: *.md
+alwaysApply: false
+---
+# README and Documentation Guidelines
+
+When working with README.md and other documentation files:
+
+## README Structure
+
+- Start with a clear project title and description
+- Include a comprehensive table of contents for longer documents
+- Provide installation and setup instructions
+- Document usage examples with code snippets
+- Include a project structure overview
+- Add contribution guidelines if applicable
+- Reference related documentation and external resources
+
+## Documentation Best Practices
+
+- Use clear, concise language appropriate for the target audience
+- Include code examples that actually work
+- Keep information up to date with project changes
+- Use consistent formatting and styling
+- Add links to relevant external documentation
+- Include troubleshooting sections for common issues
+
+## Markdown Formatting
+
+- Use proper heading hierarchy (# ## ### ####)
+- Format code blocks with appropriate language tags
+- Use backticks for inline code and file names
+- Create clear lists with consistent bullet points
+- Add horizontal rules to separate major sections
+- Include links using descriptive text rather than raw URLs
+
+## Content Guidelines
+
+- Explain not just what but why
+- Provide context for configuration options
+- Include expected outcomes and examples
+- Document any prerequisites or dependencies
+- Add version information where relevant
+- Keep language professional but approachable
+
+## Maintenance
+
+- Review and update regularly
+- Test all code examples and links
+- Keep screenshots and diagrams current
+- Ensure consistency with actual project state
+- Update based on user feedback and questions
+
+@README.md

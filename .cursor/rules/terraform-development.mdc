@@ -1,0 +1,46 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Terraform Development Guidelines
+
+When working with Terraform files, follow these best practices:
+
+## Code Organization
+
+- Use consistent naming conventions for resources
+- Group related resources logically
+- Use modules for reusable infrastructure components
+- Maintain clear separation between environments
+
+## Security Best Practices
+
+- Never hardcode sensitive values in .tf files
+- Use terraform.tfvars files for environment-specific values
+- Implement proper IAM policies with least privilege
+- Enable encryption for data at rest and in transit
+- Use secure communication protocols
+
+## State Management
+
+- Use remote state backends (S3, Terraform Cloud, etc.)
+- Enable state locking to prevent concurrent modifications
+- Implement proper backup and recovery procedures
+- Use separate state files for different environments
+
+## Documentation
+
+- Add comments explaining complex resource configurations
+- Document module inputs and outputs
+- Maintain up-to-date README files for modules
+- Include examples of module usage
+
+## Validation and Testing
+
+- Use `terraform validate` and `terraform plan` before applying
+- Implement automated testing for modules
+- Use `terraform fmt` for consistent formatting
+- Validate configurations in CI/CD pipelines
+
+@.github/instructions/terraform.instructions.md
