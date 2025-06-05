@@ -1,0 +1,26 @@
+---
+description: 
+globs: .cursor/rules/*.mdc
+alwaysApply: false
+---
+# Cursor Rules Documentation Reference
+
+The comprehensive Cursor Rules documentation is available at https://docs.cursor.com/context/rules
+
+This documentation covers:
+
+- How rules work and their purpose
+- Project rules stored in `.cursor/rules`
+- User rules defined in settings
+- Rule types (Always, Auto Attached, Agent Requested, Manual)
+- MDC format for rule files
+- Best practices for writing effective rules
+- Examples and templates
+- Team collaboration with rules
+
+Use this reference when you need to understand:
+
+- How to create and structure Cursor rules
+- Different rule types and their applications
+- Best practices for rule organization
+- Examples of effective rules from the Cursor team
