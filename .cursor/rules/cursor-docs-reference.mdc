@@ -1,8 +1,9 @@
 ---
-description: 
+description:
 globs: .cursor/rules/*.mdc
 alwaysApply: false
 ---
+
 # Cursor Rules Documentation Reference
 
 The comprehensive Cursor Rules documentation is available at https://docs.cursor.com/context/rules

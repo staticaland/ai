@@ -1,8 +1,9 @@
 ---
-description: 
-globs: 
+description:
+globs:
 alwaysApply: false
 ---
+
 # Prompt File Creation Guidelines
 
 When creating or modifying prompt files in `.github/prompts/`:
@@ -40,20 +41,25 @@ When creating or modifying prompt files in `.github/prompts/`:
 Brief description of what this prompt does.
 
 ## Context
+
 When to use this prompt...
 
 ## Instructions
+
 Step-by-step instructions...
 
 ## Parameters
+
 - {parameter1}: Description
 - {parameter2}: Description
 
 ## Example
+
 Input: ...
 Expected Output: ...
 
 ## Usage
+
 In VS Code: `@workspace /prompt-name`
 ```
 

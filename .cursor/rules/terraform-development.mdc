@@ -1,8 +1,9 @@
 ---
-description: 
-globs: 
+description:
+globs:
 alwaysApply: false
 ---
+
 # Terraform Development Guidelines
 
 When working with Terraform files, follow these best practices:

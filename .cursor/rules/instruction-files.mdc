@@ -1,8 +1,9 @@
 ---
-description: 
-globs: 
+description:
+globs:
 alwaysApply: false
 ---
+
 # Instruction File Guidelines
 
 When creating or modifying instruction files in `.github/` or `.github/instructions/`:
@@ -10,6 +11,7 @@ When creating or modifying instruction files in `.github/` or `.github/instructi
 ## Purpose
 
 Instruction files provide persistent context and guidelines to AI assistants:
+
 - General guidelines in `copilot-instructions.md`
 - Technology-specific guidance in `instructions/*.instructions.md`
 - Domain-specific best practices and patterns
@@ -35,6 +37,7 @@ Instruction files provide persistent context and guidelines to AI assistants:
 ## Technology-Specific Instructions
 
 For specialized instruction files:
+
 - Name files as `{technology}.instructions.md`
 - Focus on technology-specific best practices
 - Include common patterns and anti-patterns

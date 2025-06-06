@@ -1,8 +1,9 @@
 ---
-description: 
-globs: 
+description:
+globs:
 alwaysApply: false
 ---
+
 # AI Development Standards
 
 This project focuses on AI-assisted development workflows. Follow these standards:

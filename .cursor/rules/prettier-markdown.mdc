@@ -1,0 +1,52 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+
+# Prettier Markdown Formatting Rule
+
+## Overview
+
+This rule ensures that all markdown files are automatically formatted with Prettier after editing to maintain consistent styling and formatting across the project.
+
+## Rule Details
+
+- **Trigger**: After editing any markdown file (`.md`, `.mdc`, `.markdown`)
+- **Action**: Run prettier with markdown parser
+- **Command**: `prettier --parser markdown --write <file>`
+
+## Implementation
+
+When a markdown file is modified:
+
+1. Automatically detect the file extension
+2. Run prettier with the markdown parser
+3. Apply formatting changes in-place
+4. Ensure consistent line endings and spacing
+
+## Benefits
+
+- Maintains consistent markdown formatting
+- Ensures proper table formatting
+- Standardizes list indentation
+- Fixes heading spacing
+- Normalizes link formatting
+
+## Usage
+
+This rule applies automatically to:
+
+- `.md` files
+- `.mdc` files
+- `.markdown` files
+
+## Command Reference
+
+```bash
+prettier --parser markdown --write filename.md
+```
+
+## Configuration
+
+Prettier will use the project's `.prettierrc` configuration if present, otherwise it will use default markdown formatting rules.

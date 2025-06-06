@@ -3,6 +3,7 @@ description:
 globs: *.md
 alwaysApply: false
 ---
+
 # README and Documentation Guidelines
 
 When working with README.md and other documentation files:

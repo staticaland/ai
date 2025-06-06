@@ -1,8 +1,9 @@
 ---
-description: 
-globs: 
+description:
+globs:
 alwaysApply: false
 ---
+
 # AI Scaffolding Workflow
 
 This rule helps automate common tasks for managing the AI project scaffolding.

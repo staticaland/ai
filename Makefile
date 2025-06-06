@@ -28,7 +28,7 @@ format-md:
 		--parser markdown \
 		--prose-wrap preserve \
 		--tab-width 2 \
-		"**/*.md"
+		"**/*.md" "**/*.mdc"
 
 # Check markdown formatting without making changes
 format-md-check:
