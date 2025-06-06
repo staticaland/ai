@@ -1,0 +1,41 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Technology Integration Workflow
+
+When adding support for a new technology or framework to the AI project:
+
+## Setup Process
+
+1. Create a new instruction file: `.github/instructions/{technology}.instructions.md`
+   - Include technology-specific best practices
+   - Add common patterns and conventions
+   - Reference official documentation
+
+2. Create supporting prompts in `.github/prompts/`
+   - Use naming pattern: `{technology}-{action}.prompt.md`
+   - Include scaffolding prompts for common tasks
+   - Add debugging and troubleshooting prompts
+
+3. Update VS Code settings if needed:
+   - Add file associations for new extensions
+   - Configure language-specific settings
+   - Update syntax highlighting rules
+
+## Testing Integration
+
+- Test all new instruction files with actual AI interactions
+- Validate prompt templates produce expected outputs
+- Ensure consistency with existing project standards
+- Document any special setup requirements
+
+## Documentation
+
+- Update main README.md with new technology capabilities
+- Add examples of the new technology in action
+- Reference the new instruction files from relevant rules
+
+@.github/instructions/
+@.github/prompts/

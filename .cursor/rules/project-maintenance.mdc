@@ -1,0 +1,37 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Project Maintenance Standards
+
+Regular maintenance tasks to keep the AI project scaffolding effective:
+
+## Content Review
+
+- **Monthly**: Review existing prompts based on usage patterns
+- **Quarterly**: Update instruction files with current best practices
+- **As needed**: Align templates with new AI model capabilities
+
+## Quality Checks
+
+- Ensure all prompt files follow the established structure
+- Verify instruction files remain specific and actionable
+- Test AI interactions with existing content for accuracy
+- Maintain formatting consistency across all scaffolding files
+
+## System Updates
+
+- Update VS Code settings for new features or file types
+- Keep dependency versions current in instruction files
+- Refresh examples to use modern syntax and practices
+- Document breaking changes in technology integrations
+
+## Performance Optimization
+
+- Gather feedback on prompt effectiveness from team usage
+- Identify frequently used patterns for template creation
+- Remove or deprecate unused or ineffective prompts
+- Streamline workflows based on actual usage data
+
+@readme-maintenance.mdc

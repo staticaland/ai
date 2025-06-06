@@ -1,0 +1,41 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# File Organization Standards
+
+Maintain consistent structure and naming across the AI project:
+
+## Directory Structure
+
+```
+.github/
+├── instructions/     # Technology-specific guidance
+├── prompts/         # Reusable prompt templates
+└── workflows/       # GitHub Actions
+
+.cursor/
+└── rules/           # Cursor-specific rules
+```
+
+## Naming Conventions
+
+- **Instructions**: `{technology}.instructions.md`
+- **Prompts**: `{action}-{target}.prompt.md`
+- **Rules**: `{concept}-{scope}.mdc` (kebab-case)
+
+## Organization Principles
+
+- Group related files logically within directories
+- Use clear, descriptive file names that indicate purpose
+- Maintain consistent formatting and structure across similar file types
+- Reference related files using `@filename` syntax in rules
+
+## File References
+
+- Use relative paths when referencing other project files
+- Include file references at the end of rules for context
+- Keep cross-references up to date when moving or renaming files
+
+@instruction-files.mdc
