@@ -16,6 +16,8 @@ This principle asserts that a `module` block is a user interface in its own righ
 
 * **From UX and Cognitive Science, it respects the need for Consistency and Predictability.** Just as a consistent UI design allows users to navigate new screens intuitively, a consistent ordering within all `module` calls across a project allows developers to understand a module's purpose and configuration without having to mentally re-parse the structure each time. This predictability is a critical factor in creating a maintainable and scalable codebase.
 
+* **From User Experience (UX) Design, it implements the Principle of Progressive Disclosure.** This principle dictates that to prevent overwhelming a user, an interface should only present the essential information and actions upfront. More advanced, complex, or less frequently used options should be hidden, accessible only when a user explicitly chooses to reveal them. It's about managing complexity by presenting information in layers. The prescribed order for a module block is a direct implementation of Progressive Disclosure: Layer 1 (The Essentials) forces you to confront the most critical information first—source, version, and core identity variables. Layer 2 (The Configuration) progressively discloses the detailed configuration arguments that define how the module behaves. Layer 3 (The Advanced Options) reveals the least common and most complex options like `providers` and `depends_on`. By following this order, the module block doesn't overwhelm the reader with every possible input at once, creating an ordered journey from high-level identity to low-level implementation details.
+
 ---
 
 ## The Prescribed Order of Invocation
