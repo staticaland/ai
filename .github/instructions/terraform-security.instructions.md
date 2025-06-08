@@ -8,54 +8,7 @@ Focused guidelines for implementing security best practices in Terraform configu
 
 ## Sensitive Data Handling
 
-### Never Hardcode Secrets
-
-```hcl
-# ✗ NEVER do this
-resource "aws_db_instance" "bad_example" {
-  password = "hardcoded-password-123"  # Extremely dangerous
-}
-
-# ✓ Use variables instead
-resource "aws_db_instance" "good_example" {
-  password = var.database_password
-}
-```
-
-### Sensitive Variable Declaration
-
-```hcl
-variable "database_password" {
-  description = "Database password"
-  type        = string
-  sensitive   = true
-  # Never provide a default for secrets
-}
-
-variable "api_keys" {
-  description = "Map of API keys"
-  type        = map(string)
-  sensitive   = true
-  default     = {}
-}
-```
-
-### External Secret Management
-
-```hcl
-# Retrieve secrets from AWS Secrets Manager
-data "aws_secretsmanager_secret" "db_password" {
-  name = "prod/database/password"
-}
-
-data "aws_secretsmanager_secret_version" "db_password" {
-  secret_id = data.aws_secretsmanager_secret.db_password.id
-}
-
-resource "aws_db_instance" "main" {
-  password = jsondecode(data.aws_secretsmanager_secret_version.db_password.secret_string)["password"]
-}
-```
+For detailed guidance on handling sensitive data and secrets, see the dedicated [terraform-sensitive-data.instructions.md](terraform-sensitive-data.instructions.md) file.
 
 ## Resource Security Configuration
 
